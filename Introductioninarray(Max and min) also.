@@ -1,0 +1,62 @@
+//  program to intiaize an array 
+// and also  program to find maximum and minimum element in array
+
+#include<iostream>
+#include<climits>
+using namespace std;
+
+int main(){
+    // we can intialize in this way --->>> 1st
+
+    // int arr[4];
+    // arr[0] = 1;
+    // arr[0] = 2;
+    // arr[0] = 3;
+    // arr[0] = 4;
+
+    // we can also intialize in this way --->>> 2nd
+
+//   int arr[4] = {10 , 20 , 30 , 40};
+
+ // we can also intialize in this way --->>> 3rd -->>  value entered by user
+
+// int n ;
+// cout<<("Enter the size of array\n");
+// cin>>n;
+//  int arr[n];
+
+//  for(int i = 0 ; i<  n ; i++){
+//      cin>>arr[i];
+//  }
+
+//  for(int i = 0;  i <n ; i++){
+//      cout<<arr[i]<<" ";
+//  }
+
+//  program -->>  to find maximum and minimum elemenent of an array
+
+ int n ;
+  cout<<("Enter the size of array\n");
+  cin>>n;
+  int arr[n];
+   for(int i = 0 ; i<  n ; i++){
+      cin>>arr[i];
+  }
+  int max  = INT_MIN ; // --->>> for this we need to intialize a file i.e-->> #include<climits>
+   int min  = INT_MAX ; 
+  
+  for(int i =0;i<n ; i++){
+      if(arr[i]>max){
+          max = arr[i];   //  we can write this (maxno =max(maxno , arr[i]); 
+      }
+
+      if(arr[i]<min){
+          min = arr[i];  //  we can write this (minno =min(minno , arr[i]); 
+      }
+  }
+ cout<<("Your Minimum no is -->> : ")<<min<<endl;
+ cout<<("Your Maximum no is -->> : ")<<max<<endl;
+
+
+return 0;
+ }
