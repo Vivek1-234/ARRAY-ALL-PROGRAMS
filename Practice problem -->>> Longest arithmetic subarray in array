@@ -1,0 +1,48 @@
+//  longest arithmetic subarray in our program --->>>> like 10 7 4 6 8 10 11 -->>>  we have 4 6 8 10 -->>> will be answer because their diffrence and it very long subarray from all and we get also the diffrence same in this subaarry -->>> i.e -->>> 2 
+
+//  now how we will solve it let see the code of thinks question
+
+
+#include<iostream>
+using namespace std;
+
+int main(){
+
+int n ;                    
+cin>>n ; 
+
+
+int arr[n];
+for(int i =0 ;i<n ; i++){
+    cin>>arr[i];
+}
+
+int pd = arr[1] - arr[0];
+int curr =  2 ;
+int ans = 2 ; 
+
+for(int i = 2 ; i<n ; i++){
+   
+   if(pd == arr[i] - arr[i-1] ){
+
+   curr++;
+
+   }
+   else{
+       pd = arr[i] - arr[i-1];
+       curr = 2 ;
+   }
+
+    ans = max(curr , ans);
+    
+  cout<<ans<<endl;
+
+}
+ 
+cout<<ans<<endl;
+
+
+
+
+return 0;
+ }
