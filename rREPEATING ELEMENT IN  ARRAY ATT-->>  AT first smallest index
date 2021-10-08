@@ -1,0 +1,38 @@
+//  program --->>>   program to find the first repaeting element at smallest index -->> be careful for smallest iondex-->>> not smallest value 
+
+//  program example-->>>>  1 5 3 4 3 5 6 ---->>>>>   so 5 is the first repaeting element in this array at the samllest index and 3 is also repeatring but the index of three is greater 
+
+#include<iostream>
+#include<climits>
+using namespace std;
+
+int main(){
+
+int n ; 
+cin>>n ; 
+
+int arr[n];
+for(int i = 0 ; i<n ; i++){
+    cin>>arr[i] ; 
+
+}
+
+const int  N = 1e4;
+int minimum = INT_MAX;
+
+int idx[N];
+for(int i =0 ; i<N ; i++){
+   idx[i] = -1 ;
+}
+
+for(int i =0 ; i<n ; i++){
+   
+   if(idx[arr[i]]!= -1 ){
+       minimum = min(idx[arr[i]] , minimum );
+   }
+   idx[arr[i]] = i ;
+}
+
+cout<<minimum+1<<endl;
+return 0;
+ }
