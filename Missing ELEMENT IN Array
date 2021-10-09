@@ -1,0 +1,39 @@
+// program to find the missing element in the array this is our program ----->>>> let's see an example -->>> 0 -9 1 3 -4 5 so in this we have to find fisrt missing and smallest number in our array so the answer will be the  and also will be the pisitive ----->>>> 2 -->>>>  this is our answer
+
+#include<iostream>
+using namespace std;
+
+int main(){
+int n ; 
+cin>>n ;
+
+int arr[n];
+for(int i =0 ; i<n ; i++){
+    cin>>arr[i];
+}
+
+const int N = 1e4+2;
+
+int idx[N];
+for(int i =0 ; i<N; i++){
+    idx[i] = false;
+}
+
+for(int i =0;i<n ; i++){
+
+    if(arr[i]<0){
+        idx[arr[i]] = false;
+    }
+    idx[arr[i]] = true ;
+}
+
+for(int i =0;i<n ; i++){
+    
+    if(idx[i]!=true){
+        cout<<i<<endl;
+        break;
+    }
+}
+
+return 0;
+ }
