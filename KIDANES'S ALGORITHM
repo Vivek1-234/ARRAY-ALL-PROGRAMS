@@ -1,0 +1,160 @@
+//   1st program --->>>  print all subarray of an array --->>> ex-->>>  -1 4 7 2 
+/* -1
+   -1 4
+   -1 4 7 
+   -1 4 7 2 
+    4  
+    4 7 
+    4 7 2
+    7
+    7 2
+    2 
+    */
+
+    //  now this si the main program important ---->>>> 2nd --?>>> program
+
+//  2nd program--->>  program to find the maximum sum which given by from all subarrays --->>>
+
+//  exampe--->>>  maximum subarray sum is (4+7+2) = (13)-->>>>  this is our answer --->>>
+// and we will do this by the help of the(( kadane's algorithm )))  in big oh(n) but if we will do simply it will take big oh(n3)----->>>>
+
+    
+
+// #include<iostream>
+// using namespace std;
+
+// int main(){
+// int n ; 
+// cin>> n ; 
+
+// int arr[n];
+// for(int i =0 ; i<n ; i++){
+//     cin>>arr[i];
+// }
+
+// for(int i =0;i<n ; i++){
+//     for(int j =i; j<n ; j++){
+//         for(int k =i ; k<=j ; k++){
+
+//           cout<<arr[k]<<" "; 
+
+//         }
+//         cout<<endl;
+//     }
+// }
+// return 0;
+//  }
+
+//  this below progam is not good --->>>  due to the time complexity --->>>  will be big oh (n3)-->>>  that is not good 
+
+// #include<iostream>
+// #include<climits>
+// using namespace std;
+
+// int main(){
+// int n ; 
+// cin>> n ; 
+
+// int arr[n];
+// for(int i =0 ; i<n ; i++){
+//     cin>>arr[i];
+// }
+// int maximum = INT_MIN;
+// for(int i =0;i<n ; i++){
+//     for(int j =i; j<n ; j++){
+//         int sum = 0 ; 
+        
+//         for(int k =i ; k<=j ; k++){
+
+//           sum = sum + arr[k];
+
+//         }
+//         maximum = max(sum , maximum);
+//     }
+// }
+// cout<<maximum<<endl;
+// return 0;
+//  }
+
+
+// progam below --->>  is good more than the above progam  because this program will give big oh(n2)  time complexity  -->>>  and above program was give big oh(n3)  -->>>  so this si good more than the above program --->>>>
+
+// #include<iostream>
+// #include<climits>
+// using namespace std;
+
+// int main(){
+// int n ; 
+// cin>>n ;
+
+// int arr[n];
+// for(int i =0 ;i<n ; i++){
+//     cin>>arr[i];
+// }
+
+// int a[n+1];
+// a[0] = 0 ;
+
+
+// for(int i =1 ; i<=n ; i++){
+//    a[i]= a[i-1] + arr[i-1];
+// }
+// //  now this will be in our array--->>>>>
+
+// for(int j =0 ; j<=n ; j++){
+//     cout<<a[j]<<" ";
+// }
+
+// //  now we have to find the maximum---->>>>
+
+// int maximum = INT_MIN;
+// int sum = 0 ;
+// for(int i =1 ; i<=n ; i++){
+
+//     for(int j =0 ;j<i ; j++){
+
+//   sum  = a[i] - a[j];
+//  maximum = max(maximum , sum);
+//     }
+// }
+// cout<<maximum<<endl;
+
+// return 0;
+//  }
+
+
+//  this below progrm will be the our best program --->> because in this the time complexity will be big oh (n)  -->>>  and this is a very good thing so kidane's algorithm is so much important ---->>> in this way we can solve this -->>>
+
+#include<iostream>
+#include<climits>
+using namespace std;
+
+int main(){
+int n ; 
+cin>>n ;
+
+int arr[n];
+for(int i =0 ;i<n ; i++){
+    cin>>arr[i];
+}
+
+int maximumsum = INT_MIN;
+int currentsum= 0;
+for(int i =0 ;i<n ; i++){
+  currentsum += arr[i];
+
+  if(currentsum<0){
+      currentsum = 0 ;
+  }
+
+  maximumsum = max(maximumsum , currentsum);       
+   
+}
+
+
+cout<<maximumsum<<endl;
+
+
+
+return 0;
+ }
