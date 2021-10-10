@@ -1,0 +1,45 @@
+//  program relted to pair sum -->>>>  if we have given an array --->>>   1 2 3 4 5 5  --->>>> and we have find that which two element gives a given sum example -->>> supooose ---->>>  9 --->>> in this array the two elements are 4+5-->>>  sp we jave to return true and their index -->>>(3 , 4) -->>> index---->>>  otherwise we have to return -1 -->> if it is not present in our array --->>>>
+
+
+
+
+#include<iostream>
+using namespace std;
+
+
+bool pairsum(int arr[] , int n , int k ){  
+int low =0;
+int high = n-1;
+
+while(low<high){
+    if(arr[low]+arr[high] == k){
+        cout<<low<<" "<<high<<endl;
+        return true;
+    }
+    else if(arr[low]+arr[high]>k){           
+        high--;
+    }
+    else{
+        low++;
+    }
+}
+return false;
+}
+
+int main(){
+int n , k ;
+cin>>n>>k;
+
+int arr[n];
+
+for(int i =0 ;i<n; i ++){
+    cin>>arr[i];
+}
+
+cout<<pairsum(arr , n , k);
+
+
+
+
+return 0;
+ }
