@@ -1,0 +1,57 @@
+//  progeam to print the matrix inn the spiral order are as follows--->>>>
+//  1 2 3
+//  4 5 6
+//  7 8 9
+
+// --->>>>  so , the spiral order of the matrix is ---->>>>> 1 2 3 6 9 8 7 4 5 ---->>>>
+
+
+#include<iostream>
+using namespace std;
+
+int main(){
+int n  , m ;
+cin>>n>>m;
+
+int arr[n][m];
+for(int i =0 ; i<n ; i++){
+    for(int j =0 ; j<n ; j++){
+        cin>>arr[i][j];
+    }
+    cout<<endl;
+
+}
+
+//  program to print the spiral order of the matrix ---->>>>>
+int rstart = 0 , rend = n-1 , cstart = 0 , cend = m-1;
+
+while(rstart<=rend && cstart<=cend){
+
+    for(int col= cstart; col<=cend; col++){
+
+        cout<<arr[rstart][col]<<" ";  
+    }
+   rstart++;
+    for(int row= rstart ; row<=rend ; row++){
+
+        cout<<arr[row][cend]<<" ";
+    }
+    cend--;   
+     for(int col= cend ; col>=cstart ; col--){
+
+        cout<<arr[rend][col]<<" ";
+    }
+    rend--;
+     for(int row = rend ; row>=rstart ; row--){
+
+        cout<<arr[row][cstart]<<" ";
+    }
+   cstart++;
+
+}
+
+
+
+
+return 0;
+ }
