@@ -1,0 +1,68 @@
+//  1st-->>>>>.  program to inialise an character array --->>>>>>
+//  --->>>>>>>> 2nd -->>>>>>> After that we will se our array is  palindrome or not  ------>>>>>>>>
+//  let see=-------->>>>
+
+
+
+
+// first -->>>>>>>>>intialisaztion =--->>>>>>>
+
+
+#include<iostream>
+using namespace std;
+
+int main(){
+
+    //  1st -->>>  way to intialise an array -->>>>>>
+
+// char arr[10] = "vivek";
+// cout<<arr;
+
+
+//  2 nd way to intialize an array ----->>>>>>>>
+
+// char arr[10] = "vivek";
+     
+//      int i =0 ;
+//      while(arr[i]!='\0'){
+
+//     cout<<arr[i];
+//     i++;
+// }
+
+//  3rd way to get the full line of an array -->>>>>
+
+// int n ;
+// cin>>n ;
+// char arr[n];
+// cin.getline(arr,n );
+// cout<<arr;
+
+int n  ; 
+cin>>n ;
+
+char arr[n+1];
+cin>>arr;
+bool flag = true ;
+for(int i =0 ;i<n ; i++){
+
+    if(arr[i]!=arr[n-1-i])
+    {  
+        flag= false;
+       
+        break;
+   }
+   }
+
+if(flag){
+    cout<<"Your Charcter array is palindrome "<<endl;
+
+}
+else{
+      cout<<"Your Charcter array is not palindrome "<<endl;
+}
+
+
+
+return 0;
+ }
