@@ -1,0 +1,52 @@
+//  program to find the union of the two sorted array --------->>>>>
+// example array 1 =-->>>>>>  84 , 2,3,4,5 
+       // array 2 =-->>>>>>  84 , 2
+ 
+ //  union of these two array willbe -------->>>>>> 84 ,2,3,4,5
+
+#include<iostream>
+using namespace std;
+
+int main(){
+
+int n1 = 5;
+int n2 = 5;
+int a1[n1] = {2,3,5,6,7};
+int a2[n2] = {1,2,4,5,6};
+
+int  i =0 ,  j =0;
+
+while(i<n1 && j<n2){
+         if(a1[i] == a2[j]){
+             cout<<a1[i]<<" ";
+             i++ , j++;
+
+         }
+
+        else if(a1[i] > a2[j]){
+             cout<<a2[j]<<" ";
+             j++;
+
+         }
+           else if(a1[i] < a2[j]){
+             cout<<a1[i]<<" ";
+             i++;
+
+         }
+
+
+}
+while(i<n1){
+    cout<<a1[i]<<" ";
+    i++;
+
+}
+while(j<n2){
+    cout<<a2[j]<<" ";
+    j++;
+
+}
+
+
+return 0;
+ }
