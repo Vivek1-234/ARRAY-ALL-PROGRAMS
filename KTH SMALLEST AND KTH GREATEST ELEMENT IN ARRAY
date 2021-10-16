@@ -1,0 +1,60 @@
+//  program to find the element the of the ( kth smallest element and kth greatest element ) in array  ------->>>>>>
+
+#include<iostream>
+using namespace std;
+
+void sorted(int arr[] , int n ){
+
+    for(int i =0;i<n-1 ;i++){
+    for(int j = i+1 ; j<n ; j++){        
+        
+        if(arr[j]<arr[i]){
+            int temp = arr[i];
+            arr[i] = arr[j];
+            arr[j] = temp ;
+
+        }
+    }
+    } 
+}
+
+void kthsmallestandkthgreatest(int arr[] , int n   , int s , int g ){
+
+    sorted(arr ,n);
+    
+    //  kth minimum element ------>>>>>
+    
+    int i =0;
+    while(s){
+       s--, i++;
+    }
+      i--;
+       cout<<arr[i]<<endl;;
+
+    // kth  gratest eleement ------>>>>>
+
+     int j=n;
+    while(g){
+       g-- , j--;
+    }
+   
+    cout<<arr[j]<<endl;
+ 
+}
+
+int main(){
+
+int n , s ,g;
+cin>>n ; 
+cin>>s ; 
+cin>>g ; 
+
+int arr[n];
+
+for(int i =0;i<n ; i++){
+    cin>>arr[i];
+}
+kthsmallestandkthgreatest(arr, n , s , g);
+
+return 0;
+ }
